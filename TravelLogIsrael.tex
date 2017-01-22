@@ -1,30 +1,60 @@
 \documentclass[letterpaper]{report}
 
-\usepackage[letterpaper,margin=0.75in,includefoot,footskip=30pt]{geometry}
+% Set up the document for the titlepage, and then redefine geometry in the
+% main document
+\usepackage[letterpaper,margin=0.25in,includefoot,footskip=30pt]{geometry}
 \usepackage{layout}
 \usepackage{multicol}
 \usepackage[parfill]{parskip}
 \usepackage{bibleref}
 \usepackage[urlcolor=blue,colorlinks=true]{hyperref}
 \usepackage{graphicx}
+\usepackage{titling}
 \graphicspath{ {IsraelWebImages/} }
 \usepackage{float} % Allows the [H] to be used to avoid floating in multicol
 \usepackage{caption}
+\usepackage{appendix}
+\usepackage{pdfpages}
 \captionsetup[figure]{labelformat=empty} % Don't call figures "figures"
 
+% Use this command to add verse superscripts
+\newcommand{\vs}[1]{\textsuperscript{#1}}
+
+% Make a combined href / footnote package so that users can click on the
+% electronic document but also the printed version still has the URL in it.
+% This needs to be a little more complicated than just
+% \newcommand{\hreffn}[2]{\href{#1}{#2}\footnote{\url{#1}}}
+% Because hyperref does a good job of escaping special chars,
+% but you need to add all that when passing them through newcommand:
+%http://tex.stackexchange.com/questions/35310/problem-with-use-of-in-custom-href-command
+%http://tex.stackexchange.com/questions/208808/newcommand-with-href
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Israel Pilgrimage}
 \author{Jedidiah \& Tatiana Bartlett}
+
+\predate{}
+
 \date{}
 
-%Use this command to add verse superscripts
-\newcommand{\vs}[1]{\textsuperscript{#1}}
+\postdate{
+	\begin{center}
+		\includegraphics[height=7.5in]{israel-political-map}\\[\bigskipamount]
+	\end{center}
+}
 
 \begin{document}
 \maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use different margins for the rest of the document
+\newgeometry{margin = 0.75in}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{In Preparation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Preparation of This Document}
 I wanted to do some deliberate preparation and pre-reading for the trip,
@@ -46,7 +76,8 @@ I selected the RSV translation since that seems to be the de-facto standard
 for liturgical use, and I've had no major issues with the translation myself.
 
 Using the website, it was really easy to just type in some verses and their
-range, for example: \href{https://www.biblegateway.com/passage/?search=Matthew+2%3A13-23&version=RSV}{
+range, for example:
+\href{https://www.biblegateway.com/passage/?search=Matthew+2%3A13-23&version=RSV}{
 Matthew 2:13-23}
 
 \subsection{Additional Contemplation}
@@ -63,7 +94,7 @@ point in the future and remember some forgotten detail or significant impact
 that gets too easily forgotten in the waves of reality that will inevitably
 ensue.
 
-\section{The TODO list}
+\section{Preparations}
 Before we left, Tatiana and I had a long checklist
 of things that we needed to get done.
 
@@ -97,6 +128,14 @@ This included:
 \section{Jan 24 - Tuesday - Arrival Day}
 Arrive in Tel Aviv and travel to and Check-in at Bethlehem
 
+\subsection{Agenda}
+\begin{description}
+  \item[] Arrive Ben Gurion Airport Transfer to Bethlehem
+  \item[Hotel] Dinner \& overnight in Bethlehem at the Grand Park Hotel
+\end{description}
+
+\includegraphics[width=\textwidth]{AirportToHotel}
+
 \subsection{Notes from Fr. Gregory}
 We will arrive in the late afternoon at Ben Gurion Airport in Tel Aviv.
 By the time we clear customs, we will be quite tired and ready to transfer by bus 
@@ -109,14 +148,30 @@ I am forwarding this to him as well for final clarification).
 We will have dinner and rest at the hotel in Bethlehem in preparation for our
 big first day.
 
-\subsection{Daily Notes}
+%\subsection{Daily Notes}
 
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Jan 25 - Wednesday - Day 1}
 Feast of St. Gregory the Theologian
+
+\subsection{Agenda}
+\begin{description}
+	\item[08:00am] Bethlehem: Manger Square
+	    \subitem Basilica \& Grotto of the Nativity
+	    \subitem St. Jerome's Caves – Grotto of the Holy Innocent
+	\item[09:00 or 10:00] Liturgy in the Church of the Nativity or in the 
+		Fields of the Shepherds
+		\subitem Beit Sahour: Shepherds’ Fields
+	\item[Lunch] in Beit Sahour at the Shepherds’ Valley Restaurant 
+	\item[Afternoon] Monastery of St. Sabbas in the desert 
+	    (taxis to the monastery)
+	    \subitem Shopping opportunity at an olive wood shop Dinner 
+	    
+	\item[Hotel] overnight in Bethlehem at the Grand Park Hotel
+\end{description}
 
 \subsection{Notes from Fr. Gregory}
 We may be able to celebrate Liturgy this day. We shall see if this is possible. Either way, we will visit: the Church of the Nativity with Grotto beneath (spot where Christ was born); Grotto of the Holy Innocents; Shepherds' Fields (Ancient Byzantine Church remnant)...the Gospel passages for these sites are: 
@@ -140,7 +195,8 @@ or at the \href{https://en.wikipedia.org/wiki/Mar_Saba}{
     Wikipedia page for Mar Saba}.
 
 Read more about the 
-\href{https://oca.org/saints/lives/2008/12/05/103477-venerable-sava-the-sanctified}{The Life of St. Sabbas} before we arrive.
+\href{https://oca.org/saints/lives/2008/12/05/103477-venerable-sava-the-sanctified}{
+	The Life of St. Sabbas} before we arrive.
 
 We will then return to the hotel in Bethlehem for dinner and rest...
 
@@ -156,17 +212,21 @@ The church was originally commissioned in 327 by Constantine the Great and his
 mother Helena over the site that was traditionally considered to be located 
 over the cave that marks the birthplace of Jesus.
 The Church of the Nativity site's original basilica was completed in 339 and 
-destroyed by fire during the Samaritan Revolts in the 6\textsuperscript{th} century.
+destroyed by fire during the Samaritan Revolts in the 6\textsuperscript{th} 
+century.
 A new basilica was built 565 by Justinian, the Byzantine Emperor,
 restoring the architectural tone of the original.
 The site of the Church of the Nativity has had numerous additions since this 
 second construction, including its prominent bell towers.
 Due to its cultural and geographical history,
-the site holds a prominent religious significance to those of the Christian faith.
+the site holds a prominent religious significance to those of the Christian 
+faith.
 
 The site of the Church of the Nativity is a World Heritage Site,
-and was the first to be listed under Palestine by the United Nations Educational,
-Scientific and Cultural Organization (UNESCO). The site is also on UNESCO's List of World Heritage in Danger.
+and was the first to be listed under Palestine by the United Nations 
+Educational,
+Scientific and Cultural Organization (UNESCO).
+The site is also on UNESCO's List of World Heritage in Danger.
 
 \begin{figure}[H]
 \centering
@@ -369,7 +429,8 @@ shepherds.
 
 \subsubsection{Scripture}
 {\centering
-\emph{\bibleverse{Luke}(2:1-20) The birth of Jesus, The Shepherds and the Angels}\\
+\emph{\bibleverse{Luke}(2:1-20) The birth of Jesus,
+	The Shepherds and the Angels}\\
 }
 \begin{multicols}{2}
 \vs{1}In those days a decree went out from Caesar Augustus that all the world
@@ -420,180 +481,381 @@ as it had been told them.
 \end{multicols}
 
 \clearpage
-\subsection{Daily Notes}
+%\subsection{Daily Notes}
 
 \clearpage
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Jan 26 - Thursday - Day 2}
+Jerusalem
+\subsection{Agenda}
+\begin{description}
+	\item[08:00] Check-out of the hotel – Drive to Jerusalem (east first)
+	    \subitem Mount of Olives: Russian Orthodox Monastery
+	    \subitem Pater Noster Church Panoramic view
+	    \subitem Palm Sunday route
+	    \subitem Dominus Flevit Chapel
+	    \subitem St. Mary Magdalene Russian Orthodox Church
+	        (open 10:00 – 12:00)
+	    \subitem Garden of Gethsemane
+	    \subitem Church of All Nations (if time permits)
+	    \subitem Tomb of the Virgin Mary
+	\item[Lunch] in Jerusalem at the
+			St. Andrew’s Guest House or Notre Dame Center
+	\item[Afternoon] West Jerusalem
+	    \subitem Greek Orthodox Monastery of the Holy Cross (10:00 – 16:00)
+		\subitem Village of Ein Karem: Church of John the Baptist Israel 
+		\subitem Museum: Model of Ancient Jerusalem
+		\subitem Shrine of the Book (optional)
+	\item[Hotel] Dinner \& overnight in Jerusalem at the Golden Walls Hotel
+\end{description}
 
 \subsection{Notes from Fr. Gregory}
-We will have breakfast at the hotel and then take all of our luggage with us as we check out of the first hotel. Today we drive to Jerusalem, which is not that far away from Bethlehem. This morning we will be in the area of the Mount of Olives and the Garden of Gethsemane. Our sites will include several Russian Orthodox monasteries...one on the Mount of Olives and one at Gethsemane, the Tomb of the Holy Mother of God, and perhaps the Chapel of the Ascension. All of the sites on this day are outside of the walls of the Old City and we will have beautiful views of Jerusalem from these heights.
+We will have breakfast at the hotel and then take all of our luggage with us 
+as we check out of the first hotel.
+Today we drive to Jerusalem, which is not that far away from Bethlehem.
+This morning we will be in the area of the Mount of Olives and the Garden of
+Gethsemane.
+Our sites will include several Russian Orthodox monasteries;
+one on the Mount of Olives and one at Gethsemane,
+the Tomb of the Holy Mother of God,
+and perhaps the Chapel of the Ascension.
+All of the sites on this day are outside of the walls of the Old City and we
+will have beautiful views of Jerusalem from these heights.
 
-For the Mount of Olives, the Epistle and Gospel passages to be read are from the Ascension (Acts of the Apostles 1:1-12 and Luke 24:36-53). Here is a good site for the Chapel of the Ascension
+For the Mount of Olives, the Epistle and Gospel passages to be read are from
+the Ascension (Acts of the Apostles 1:1-12 and Luke 24:36-53).
+Here is a good site for the 
+\href{http://www.sacred-destinations.com/israel/jerusalem-chapel-of-ascension}{
+    Chapel of the Ascension}.
 
-\url{http://www.sacred-destinations.com/israel/jerusalem-chapel-of-ascension}
+St. Pelagia the Penitent's Tomb is also here...we will need to ask the guard 
+at the Chapel of the Ascension if we wish to see and venerate it...
+\href{http://www.antiochian.org/node/16762}{
+	Her life is here}
 
-St. Pelagia the Penitent's Tomb is also here...we will need to ask the guard at the Chapel of the Ascension if we wish to see and venerate it...
+Here is 
+\href{http://www.pravoslavie.ru/english/46854.htm}{
+	a very interesting site highlighting the history of the Mount of Olives},
+ including the present day Russian Mission located there.
+ This includes the Chapel of St. John the Baptist,
+ built over the site where his honorable head was discovered.
 
-Her life is here
+And here is \href{http://jerusalem-mission.org/convent_ascension.html}{
+	a history of the Russian Convent on the Mount of Olives}.
 
-\url{http://www.antiochian.org/node/16762}
+In this area are also the Dominus Flevit (The Lord Wept) Chapel,
+Church of the Pater Noster (Our Father) and the Church of All Nations.
+You may look those up as well and we will try to visit them if we have the 
+time.
 
-Here is a very interesting site highlighting the history of the Mount of Olives, including the present day Russian Mission located there. This includes the Chapel of St. John the Baptist, built over the site where his honorable head was discovered.
+In general, the scriptures concerning Christ's Agony in the Garden of 
+Gethsemane are Matthew 26:36-56; Mark 14:32-50; Luke 22:40-53; John 18:1-12.
 
-\url{http://www.pravoslavie.ru/english/46854.htm}
+We will also visit the Russian Orthodox Convent of St. Mary Magdalene in
+Gethsemane.
+\href{http://www.pravoslavie.ru/english/63239.htm}{
+The relics of Grand Duchess Elizabeth and the Nun Barbara} are housed here.
 
-And here is a history of the Russian Convent on the Mount of Olives
+Hopefully, the sisters can tell us a little about the traditional location of 
+Christ's Weeping in the Garden and why the monastery was built here.
 
-\url{http://jerusalem-mission.org/convent_ascension.html}
+Finally, we cannot forget the Tomb of the Holy Mother of God;
+it is also here, right next to the Church of All Nations.
+\href{https://orthodoxword.wordpress.com/2010/08/15/the-tomb-of-the-most-holy-virgin-jerusalem/}{
+Here is a site} highlighting that Holy Place.
 
-In this area are also the Dominus Flevit (The Lord Wept) Chapel, Church of the Pater Noster (Our Father) and the Church of All Nations. You may look those up as well and we will try to visit them if we have the time.
+I also wish to make it a point to visit the relatively new Greek Orthodox
+Church of the Protomartyr Stephen,
+built near the site of his traditional martyrdom by stoning;
+the account of his martyrdom can be found in
+Acts of the Apostles 6:8-7:5, 46-60.
 
-In general, the scriptures concerning Christ's Agony in the Garden of Gethsemane are Matthew 26:36-56; Mark 14:32-50; Luke 22:40-53; John 18:1-12.
+After Lunch,
+we will visit the Greek Orthodox Monastery of the Holy Cross
+\href{http://www.biblewalks.com/Sites/CrossMonastery.html}{
+	which you can visit here}.
 
-We will also visit the Russian Orthodox Convent of St. Mary Magdalene in Gethsemane. The relics of Grand Duchess Elizabeth and the Nun Barbara are housed here. To read about this site, go here:
+We are also scheduled to visit the Village of Ein Karem (Gornya)
+on this day;
+specifically, the Greek Orthodox Church of St. John the Baptist;
+\href{https://www.holyland-pilgrimage.org/ein-karem-home-of-john-the-baptist-and-place-of-the-visitation}{read about this village here}.
 
-\url{http://www.pravoslavie.ru/english/63239.htm}
+One other thought for this day...what a blessing to visit Katamon
+(The Monastery of St. Simeon the God-Receiver);
+we shall try to do our best to see these Holy Places given our time
+restraints.
+Read the story of St. Simeon the God-Receiver in the Holy Scriptures at
+Luke 2:25-38.
+\href{http://www.goisrael.com/Tourism_Eng/Tourist%20Information/Christian%20Themes/Details/Pages/St.%20Simeon%E2%80%99s%20Monastery%20chr.aspx}
+	{Here is a short description of the site}.
+	
+I believe that we will stay at the Golden Walls Hotel in Jerusalem on this
+night; so we will check in and have dinner there...
+rest up because we have only toured for two days
+(and just describing these two days has already made me tired)!!!
 
-Hopefully, the sisters can tell us a little about the traditional location of Christ's Weeping in the Garden and why the monastery was built here.
-
-Finally, we cannot forget the Tomb of the Holy Mother of God...it is also here, right next to the Church of All Nations. Here is a site highlighting that Holy Place:
-
-\url{https://orthodoxword.wordpress.com/2010/08/15/the-tomb-of-the-most-holy-virgin-jerusalem/}
-
-I also wish to make it a point to visit the relatively new Greek Orthodox Church of the Protomartyr Stephen, built near the site of his traditional martyrdom by stoning...the account of his martyrdom can be found in Acts of the Apostles 6:8-7:5, 46-60.
-
-After Lunch, we will visit the Greek Orthodox Monastery of the Holy Cross which you can visit here
-
-\url{http://www.biblewalks.com/Sites/CrossMonastery.html}
-
-We are also scheduled to visit the Village of Ein Karem (Gornya) on this day...specifically, the Greek Orthodox Church of St. John the Baptist...read about this village here
-
-\url{https://www.holyland-pilgrimage.org/ein-karem-home-of-john-the-baptist-and-place-of-the-visitation}
-
-One other thought for this day...what a blessing to visit Katamon (The Monastery of St. Simeon the God-Receiver)...we shall try to do our best to see these Holy Places given our time restraints. Read the story of St. Simeon the God-Receiver in the Holy Scriptures at Luke 2:25-38. Here is a short description of the site...
-
-\url{http://www.goisrael.com/Tourism_Eng/Tourist%20Information/Christian%20Themes/Details/Pages/St.%20Simeon%E2%80%99s%20Monastery%20chr.aspx}
-
-I believe that we will stay at the Golden Walls Hotel in Jerusalem on this night...so we will check in and have dinner there...rest up because we have only toured for two days (and just describing these two days has already made me tired)!!!
-
-\subsection{Daily Notes}
+%\subsection{Daily Notes}
 
 \clearpage
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Jan 27 - Friday - Day 3}
+Old Jerusalem
+\subsection{Agenda}
+\begin{description}
+	\item[08:00am] Depart
+		\subitem Old City of Jerusalem:
+		    Dung Gate – Western Wall
+		\subitem Temple Mount:
+		    view the El Aqsa Mosque \& the Dome of the Rock 
+		\subitem Via Dolorosa:
+		    Pool of Bethesda -- Church of St Anne
+		\subitem Monastery of Sts. Joachim and Anna:
+		    birthplace of the Mother of God.
+	\item[Lunch] in the Armenian Quarter at the Bulghourji Restaurant 
+	\item[Afternoon] Greek Orthodox Patriarchate (blessing by the Patriarch) 
+		\subitem Church of the Holy Sepulchre
+	\item[Hotel] Dinner \& overnight in Jerusalem at the Golden Walls Hotel
+\end{description}
 
 \subsection{Notes from Fr. Gregory}
-On Day 3 we will enter the old city of Jerusalem through the Dung Gate. We will go to the Temple Mount and see the Western Wall (last remaining piece of the Old Temple)...as well as the Dome of the Rock. It may be possible, while at the Temple Mount (Sion), to visit the Upper Room and even King David's Tomb...we will check on these sites when we get on the ground over there. Holy Scripture: Mark 14:12-26; Matthew 26:17-30; John 13:1-17 and (Pentecost) Acts 2:1-21.
+On Day 3 we will enter the old city of Jerusalem through the Dung Gate.
+We will go to the Temple Mount and see the Western Wall
+(last remaining piece of the Old Temple)...as well as the Dome of the Rock.
+It may be possible, while at the Temple Mount (Sion),
+to visit the Upper Room and even King David's Tomb...
+we will check on these sites when we get on the ground over there.
+Holy Scripture: Mark 14:12-26; Matthew 26:17-30;
+John 13:1-17 and (Pentecost) Acts 2:1-21.
 
-Next we will be on the Via Dolorosa (Way of the Cross)...this is the traditional path taken by Christ as He carried the Holy Cross to Golgotha...it includes the Lithostrotos (Flagellation Chapel) and a good explanation is here
+Next we will be on the Via Dolorosa (Way of the Cross)...
+this is the traditional path taken by Christ as He carried the Holy Cross to
+Golgotha...
+it includes the Lithostrotos (Flagellation Chapel) and 
+\href{http://www.mikemasonbooks.com/the-lithostrotos-chapter-57-of-jesus-his-story-in-stone/}{
+	a good explanation is here}.
 
-\url{http://www.mikemasonbooks.com/the-lithostrotos-chapter-57-of-jesus-his-story-in-stone/}
+In this vicinity is the Sheep's Pool (Bethesda)...
+read the Gospel of John 5:1-15 and, while I am thinking of pools,
+just outside of the Old City is Siloam...
+read John 9:1-38. We shall try to get there as well.
+Before getting to the Holy Sepulchre,
+there remains the Church of St. Anne and the Monastery of Sts. Joachim and
+Anna...\href{http://www.seetheholyland.net/church-of-st-anne/}{
+	you can look here} for some background.
+\href{http://www.johnsanidopoulos.com/2011/09/video-home-of-sts-joachim-and-anna-in.html}{
+Also see this video, with Greek chanting.}
 
-In this vicinity is the Sheep's Pool (Bethesda)...read the Gospel of John 5:1-15 and, while I am thinking of pools, just outside of the Old City is Siloam...read John 9:1-38. We shall try to get there as well. Before getting to the Holy Sepulchre, there remains the Church of St. Anne and the Monastery of Sts. Joachim and Anna...you can look here
-
-\url{http://www.seetheholyland.net/church-of-st-anne/}
-
-and here, respectively, for some background  (the following is a video, with Greek chanting)
-
-\url{http://www.johnsanidopoulos.com/2011/09/video-home-of-sts-joachim-and-anna-in.html}
-
-After lunch, we are scheduled to Greek Orthodox Patriarchate of Jerusalem and, if the Lord blesses it, to receive the Blessing of the Patriarch of Jerusalem. Following this, we will visit the holiest site in all of Christendom...the Church of the Holy Sepulchre. There is too much here to describe. Here are SOME (not all) of the relevant Gospel passages covered beneath the roof of this incredible Holy Place: Mark 15:43-47 (The Anointing Stone inside the entrance); Matthew 27:27-56 (Golgotha...each evangelist has a passage announcing this); and the Life-Giving Tomb of Christ...Mark 15:42-16:8 (each evangelist also joyously announces this reality as well). Here is link that should give us a pretty good start:
-\url{https://orthodoxwiki.org/Church_of_the_Holy_Sepulchre_(Jerusalem)}
+After lunch, we are scheduled to Greek Orthodox Patriarchate of Jerusalem and,
+if the Lord blesses it, to receive the Blessing of the Patriarch of Jerusalem.
+Following this, we will visit the holiest site in all of Christendom...
+the Church of the Holy Sepulchre.
+There is too much here to describe.
+Here are SOME (not all) of the relevant Gospel passages covered beneath the 
+roof of this incredible Holy Place:
+Mark 15:43-47 (The Anointing Stone inside the entrance);
+Matthew 27:27-56 (Golgotha...each evangelist has a passage announcing this); 
+and the Life-Giving Tomb of Christ...
+Mark 15:42-16:8
+(each evangelist also joyously announces this reality as well).
+\href{https://orthodoxwiki.org/Church_of_the_Holy_Sepulchre_(Jerusalem)}{
+	Here is link that should give us a pretty good start}.
 
 We then return for dinner and overnight to our hotel in Jerusalem.
-
-
-\subsection{Daily Notes}
+%\subsection{Daily Notes}
 
 \clearpage
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Jan 28 - Saturday - Day 4}
+To the East of Jerusalem \& Dead Sea
+
+\subsection{Agenda}
+\begin{description}
+	\item[08:00am]  Monastery of St. Gerasimos
+	  \subitem Qasr el-Yahud baptismal site on the River Jordan
+	    (renewal of baptismal vows)
+	  \subitem Service at the baptismal site in Qasr el-Yahud
+	  \subitem Opportunity to swim (float) in the Dead Sea
+	\item[Lunch] in Jericho at the Al-Rawda Restaurant 
+	\item[Afternoon] Desert oasis of Jericho: Tree of Zacchaeus – Monastery of the Prophet Elijah
+	  \subitem Cable car up Mount of Temptation
+	  \subitem Monastery of Sarantario (Temptation)
+	  \subitem Wadi Qelt: view St. George's Monastery (walk down if situation \& time permits) 
+	\item[Hotel] Dinner \& overnight in Jerusalem at the Golden Walls Hotel
+	\item[23:00]  Church of the Holy Sepulchre – Midnight Liturgy
+\end{description}
 
 \subsection{Notes from Fr. Gregory}
-After breakfast, we depart for the Monastery of St. Gerasimos...here is a nice little feature to give everyone some background about this saint and this site:
+After breakfast, we depart for the Monastery of St. Gerasimos...
+here is a nice little feature to give everyone some background about this
+saint and this site:
 
 \url{http://www.biblewalks.com/Sites/StGerassimos.html}
-
 or
-
 \url{http://www.seetheholyland.net/monastery-of-st-gerasimus/}
 
-(This monastery is built over the site believed to house a cave where the Holy Family stayed as they fled to Egypt and is also famous for being the monastery of St. Zosimas, who traveled into the desert and met St. Mary of Egypt).
+(This monastery is built over the site believed to house a cave where the Holy 
+Family stayed as they fled to Egypt and is also famous for being the monastery 
+of St. Zosimas, who traveled into the desert and met St. Mary of Egypt).
 
-We then travel to Qasr el-Yahud where we will visit the Jordan River and celebrate the Outdoor Blessing of Water...some people enjoy actually entering the river completely and being blessed with these holy waters. (Matthew 3:13-17; Mark 1:9-11; Luke 3:21-23.
+We then travel to Qasr el-Yahud where we will visit the Jordan River and 
+celebrate the Outdoor Blessing of Water...
+some people enjoy actually entering the river completely and being blessed
+with these holy waters.
+(Matthew 3:13-17; Mark 1:9-11; Luke 3:21-23.
 
-Anyone who might wish to experience "swimming" in the Dead Sea (more like floating) should be prepared to do it on this day...in other words, swim atire would be good today.
+Anyone who might wish to experience "swimming" in the Dead Sea
+(more like floating) should be prepared to do it on this day...
+in other words, swim atire would be good today.
 
-After lunch in Jericho, we will visit the Tree of Zacchaeus and Monastery of the Prophet Elijah, Luke 19:1-10; Monastery of the Mount of Temptation (Luke 4:1-14) and Monastery of St. George in Wadi Qelt (Elijah's Cave) (we will walk down if time permits)...
-
+After lunch in Jericho,
+we will visit the Tree of Zacchaeus and Monastery of the Prophet Elijah,
+Luke 19:1-10;
+Monastery of the Mount of Temptation (Luke 4:1-14)
+and Monastery of St. George in Wadi Qelt (Elijah's Cave)
+(we will walk down if time permits)...
 \url{https://en.wikipedia.org/wiki/St._George's_Monastery,_Wadi_Qelt}
 
-We return to the hotel for dinner and a little rest before departing for Liturgy at the Holy Sepulchre (optional) to be there by 11pm for the Liturgy at Midnight...time may vary.
+We return to the hotel for dinner and a little rest before departing for 
+Liturgy at the Holy Sepulchre (optional)
+to be there by 11pm for the Liturgy at Midnight...time may vary.
 
-\subsection{Daily Notes}
+%\subsection{Daily Notes}
 
 \clearpage
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Jan 29 - Sunday - Day 5}
 
+\subsection{Agenda}
+\begin{description}
+	\item[08:00am] Check-out of the hotel Bethany
+	  \subitem church \& tomb of Lazarus – Monastery of Martha \& Mary
+	  \subitem Drive to Galilee via the West Bank and Nablus
+	\item[Lunch] in Sebastia at the Samaria Restaurant
+	\item[Afternoon] Ruins of Sebastia – Nablus: Jacob’s Well
+	  \subitem Continue to the Sea of Galile
+	\item[Hotel] Dinner \& overnight in Tiberias at the Ron Beach Hotel 
+\end{description}
+
 \subsection{Notes from Fr. Gregory}
-We check out of the hotel in Jerusalem and head for Bethany to visit the Church and Tomb of Lazarus and the Monastery of Martha and Mary. John 11:1-45
+We check out of the hotel in Jerusalem and head for Bethany to visit the 
+Church and Tomb of Lazarus and the Monastery of Martha and Mary.
+John 11:1-45
 
-After Lunch in Samaria, we visit Sebastia (Nablus)...Jacob's Well and Prison of St John the Baptist (John 4:5-42 and Mark 6:14-29. Go to
+After Lunch in Samaria, we visit Sebastia (Nablus)...Jacob's
+Well and Prison of St John the Baptist (John 4:5-42 and Mark 6:14-29). Go to
+\url{https://en.wikipedia.org/wiki/Jacob's_Well}.
 
-\url{https://en.wikipedia.org/wiki/Jacob's_Well}
+We will then continue to the city of Tiberias on the Sea of Galilee for dinner 
+and overnight at the Ron Beach Hotel.
 
-We will then continue to the city of Tiberias on the Sea of Galilee for dinner and overnight at the Ron Beach Hotel.
+%\subsection{Daily Notes}
 
-
-\subsection{Daily Notes}
-
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Jan 30 - Monday - Day 6}
+Sea of Galilee
+
+\subsection{Agenda}
+\begin{description}
+	\item[08:00am]  Greek Orthodox Church of Sts. Peter and Paul in Tiberias 
+	  \subitem Greek Orthodox Church of the Apostles in Capernaum
+	  \subitem Site of the healing of the paralytic
+	  \subitem Beitsaida – Kursi
+	      (associated with the story of the Gadarene swine…optional)
+	  \subitem Ruins of Capernaum (Catholic site – optional) 
+	\item[Lunch] Lunch by the lake at the St. Peter Restaurant
+	\item[Afternoon] Church of the Loaves and Fishes at Tabgha Mount of 
+	     Beatitudes
+	\item[16:00] Sail on the Sea of Galilee to the Ron Beach Hotel
+	\item[Hotel] Dinner \& overnight in Tiberias at the Ron Beach Hotel 
+\end{description}
 
 \subsection{Notes from Fr. Gregory}
-After breakfast, we will visit the Greek Orthodox Churches of Sts. Peter and Paul in Tiberias and the Church of the Apostles in Capernaum (site of the healing of the paralytic). Read Mark 2:1. -12. We may also visit other sites in Capernaum (Mark 1:21-31). After lunch, we will visit Tabgha and the Church of the Loaves and Fishes (Matthew 14:14-21 or John 6:5-14). We also visit the Mount of the Beatitudes (Matthew 5:1-12). We finish the day with a boat ride across the Sea of Galilee back to our hotel in Tiberias.
+After breakfast, we will visit the Greek Orthodox Churches of
+Sts. Peter and Paul in Tiberias and the Church of the Apostles in Capernaum
+(site of the healing of the paralytic).
+Read Mark 2:1. -12.
+We may also visit other sites in Capernaum (Mark 1:21-31).
+After lunch, we will visit Tabgha and the Church of the Loaves and Fishes
+(Matthew 14:14-21 or John 6:5-14).
+We also visit the Mount of the Beatitudes (Matthew 5:1-12).
+We finish the day with a boat ride across the Sea of Galilee back to our hotel 
+in Tiberias.
 
-
-\subsection{Daily Notes}
+%\subsection{Daily Notes}
 
 \clearpage
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
-\section{Jan 31 - Monday - Day 7}
+\section{Jan 31 - Tuesday - Day 7}
 This is our final full day in the Holy Land...see how fast the time has gone?
 
-\subsection{Notes from Fr. Gregory}
-After breakfast, we drive to Nazareth. On the way, we will stop at Cana, the site of Christ's first miracle (John 2:1-12). In Nazareth, (Luke 1:24-38), we will visit the site of the Annunciation, where Christ, our God, became a man.  After lunch, we will ascend Mount Tabor where Christ was transfigured before His Holy Apostles...Luke 9:28-36; Matthew 17:1-9. The us will take us to the bottom of the Mountain and taxis will take us up to the top. Finally, we go back to the hotel in Tiberias for dinner and overnight in preparation for our early departure the next morning! Glory be to God!
+\subsection{Agenda}
+\begin{description}
+	\item[08:00am] Drive to Nazareth Cana
+	  \subitem scene of Jesus first miracle (Greek Orthodox Church)
+	  \subitem St. Gabriel’s Orthodox Church – Mary’s Well – Synagogue Church 
+	  \subitem Basilica of the Annunciation (if time permits).
+	\item[11:30] Nazareth Village,
+	    a reconstruction of 1st Century Galilean life
+	\item[Lunch] Lunch in Nazareth at the Holy Land Restaurant
+	\item[Afternoon] Mount Tabor: Taxis to Mt. Tabor 
+	    \subitem Greek Orthodox Monastery – (Catholic Basilica if time permits)
+	\item[Hotel] Dinner \& overnight in Tiberias at the Ron Beach Hotel 
+\end{description}
 
-\subsection{Daily Notes}
+\subsection{Notes from Fr. Gregory}
+After breakfast, we drive to Nazareth.
+On the way, we will stop at Cana, the site of Christ's first miracle
+(John 2:1-12). 
+In Nazareth, (Luke 1:24-38), we will visit the site of the Annunciation,
+where Christ, our God, became a man.
+After lunch, we will ascend Mount Tabor where Christ was transfigured before
+His Holy Apostles...Luke 9:28-36; Matthew 17:1-9. 
+The us will take us to the bottom of the Mountain and taxis will take us up to
+the top.
+Finally, we go back to the hotel in Tiberias for dinner and overnight in
+preparation for our early departure the next morning! Glory be to God!
+
+%\subsection{Daily Notes}
 
 \clearpage
-\subsection{Journal Entry}
+%\subsection{Journal Entry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Reflections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Feb 1}
+Travel Back Day - On the plane and reflecting on it all
+\end{document}
+\begin{appendix}
+	\chapter{Pilgrimage Announcement - Fr. Gregory}
+	\clearpage
+	\includepdf[pages=-]{./IsraelAttachments/FrGregoryHolyLandPilgrimage2017}
+	\chapter{Albina Tours Ltd}
+	\clearpage
+	\includepdf[pages=-]{./IsraelAttachments/AlbinaToursLtdPilgrimageIttn}
+	\chapter{Plane Tickets}
+	\clearpage
+	\includepdf[pages=-]{./IsraelAttachments/BookedPlaneIttn}
 
+\end{appendix}
 
 \end{document}
