@@ -181,8 +181,11 @@ as has happened to some of them.
 
 And what is characteristic of the brotherhood
 here of the Holy Tomb\footnote{
-  \href{https://en.wikipedia.org/wiki/Brotherhood_of_the_Holy_Sepulchre}{
-    Orthodox monastic fraternity - the brotherhood of the Holy Sepulchre}
+    Orthodox monastic fraternity - ``Brotherhood of the Holy Sepulchre''
+    \url{https://web.archive.org/web/20120312211152/http://www.jerusalem-patriarchate.info:80/en/iera_adelf.htm}
+  }\footnote{
+    Wikipedia article about the ``Brotherhood of the Holy Sepulchre''
+    \url{https://en.wikipedia.org/wiki/Brotherhood_of_the_Holy_Sepulchre}
   }?
 It is as it has been throughout the ages, for almost two
 thousand years, to sustain the church, the holy places
